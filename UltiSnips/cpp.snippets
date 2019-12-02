@@ -34,6 +34,14 @@ snippet beginend "$1.begin(), $1.end() (beginend)"
 ${1:v}${1/^.*?(-)?(>)?$/(?2::(?1:>:.))/}begin(), $1${1/^.*?(-)?(>)?$/(?2::(?1:>:.))/}end()
 endsnippet
 
+snippet ecl "empty class .. (class)"
+class ${1:`!p snip.rv = snip.basename or "name"`}
+{
+	public:
+		${VISUAL}$0
+};
+endsnippet
+
 snippet cl "class .. (class)"
 class ${1:`!p snip.rv = snip.basename or "name"`}
 {
@@ -74,6 +82,31 @@ endsnippet
 
 snippet tp "template <typename ..> (template)"
 template <typename ${1:_InputIter}>
+endsnippet
+
+snippet us "using namespace" b
+using namespace ${1:space_name};
+$0
+endsnippet
+
+snippet sn "std namespace" i
+std::
+endsnippet
+
+snippet "co(u(t(<)?)?)?" "cout<<" ir
+cout<<
+endsnippet
+
+snippet "ci(n(>)?)?" "cin>>" ir
+cin>>
+endsnippet
+
+snippet endl "<<endl" i
+<<endl
+endsnippet
+
+snippet endls "<<std::endl" i
+<<std::endl
 endsnippet
 
 snippet cla "An entire .h generator" b
